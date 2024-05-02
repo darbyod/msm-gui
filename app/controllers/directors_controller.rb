@@ -36,4 +36,16 @@ class DirectorsController < ApplicationController
 
     render({ :template => "director_templates/eldest" })
   end
+
+  def delete
+    
+    the_id = params.fetch("path_id")
+    matching_directors = Director.where({ :id => the_id })
+    the_director = matching_directors.at(0)
+    the_director.destroy
+    
+    redirect_to("/directors")
+  
+  end
+
 end

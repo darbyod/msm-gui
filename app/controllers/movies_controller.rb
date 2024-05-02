@@ -49,10 +49,6 @@ class MoviesController < ApplicationController
   
   end
 
-
-
-  
-
   def delete
     
     the_id = params.fetch("path_id")
