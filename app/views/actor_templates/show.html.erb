@@ -8,6 +8,46 @@
 
 <hr>
 
+<form action="/modify_actor/<%= @the_actor.id %>" method="post">
+  <div>
+    <label for="name_box">
+      Name
+    </label>
+
+    <input type="text" id="name_box" name="query_name" value=<%= Actor.all.where({:id => @the_actor.id}).first.name %>>
+  </div>
+
+  <div>
+    <label for="dob_box">
+      Dob
+    </label>
+
+    <input type="date" id="dob_box" name="query_dob" vvalue=<%= Actor.all.where({:id => @the_actor.id}).first.dob %>>
+  </div>
+
+  <div>
+    <label for="bio_box">
+      Bio
+    </label>
+
+    <textarea id="bio_box" name="query_bio" rows="3"><%= Actor.all.where({:id => @the_actor.id}).first.bio %>></textarea>
+  </div>
+
+  <div>
+    <label for="image_box">
+      Image
+    </label>
+
+    <input type="text" id="image_box" name="query_image" value=<%= Actor.all.where({:id => @the_actor.id}).first.image %>>
+  </div>
+
+  <button>
+    Update actor
+  </button>
+</form>
+
+<hr>
+
 <dl>
   <dt>
     Name

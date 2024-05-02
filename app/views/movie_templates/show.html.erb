@@ -6,6 +6,69 @@
   Go back
 </a>
 
+ <div><a href="/delete/<%= @the_movie.id %>">
+  Delete movie
+</a></div>
+
+<hr>
+
+<form action="/modify_movie/<%= @the_movie.id %>" method="post">
+  
+  <input type="hidden" name="id" value="<%= @the_movie.id %>">
+  
+  <div>
+    <label for="title_box">
+      Title
+    </label>
+
+    <input type="text" id="title_box" name="query_title" value=<%= Movie.all.where({:id => @the_movie.id}).first.title %>>
+  </div>
+
+  <div>
+    <label for="year_box">
+      Year
+    </label>
+
+    <input type="text" id="year_box" name="query_year" value=<%= Movie.all.where({:id => @the_movie.id}).first.year %>>
+  </div>
+
+  <div>
+    <label for="duration_box">
+      Duration
+    </label>
+
+    <input type="text" id="duration_box" name="query_duration" value=<%= Movie.all.where({:id => @the_movie.id}).first.duration %>>
+  </div>
+
+  <div>
+    <label for="description_box">
+      Description
+    </label>
+
+    <textarea id="description_box" name="query_description" rows="3"><%= Movie.all.where({:id => @the_movie.id}).first.description %></textarea>
+  </div>
+
+  <div>
+    <label for="image_box">
+      Image
+    </label>
+
+    <input type="text" id="image_box" name="query_image" value=<%= Movie.all.where({:id => @the_movie.id}).first.image %>>
+  </div>
+
+  <div>
+    <label for="director_id_box">
+      Director ID
+    </label>
+
+    <input type="text" id="director_id_box" name="query_director_id" value=<%= Movie.all.where({:id => @the_movie.id}).first.director_id %>>
+  </div>
+
+  <button>
+    Update movie
+  </button>
+</form>
+
 <hr>
 
 <dl>
